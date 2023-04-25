@@ -7,7 +7,6 @@
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
-
 </head>
 
 <body>
@@ -20,6 +19,7 @@
 	<main>
 		<section class="container">
 			<h2>Meus pacientes</h2>
+			<input type="text" name="filtro" id="fitrar-tabela" placeholder="Digite o nome do paciente">
 			<table>
 				<thead>
 					<tr>
@@ -72,11 +72,17 @@
 				</tbody>
 			</table>
 
+			<button id="buscar-paciente" class="botao bto-principal">Buscar</button>
+			<span id="erro-ajax" class="invisivel">Erro ao buscar pacientes</span>
+
 		</section>
 	</main>
 	<!-- ... -->
 	<section class="container">
 		<h2 id="titulo-form">Adicionar novo paciente</h2>
+		<ul id="mensagens-erro">
+			<li></li>
+		</ul>
 		<form id="form-adiciona">
 			<div class="grupo">
 				<label for="nome">Nome:</label>
@@ -104,7 +110,7 @@
 
 </body>
 
-<script src="js/principal.js">
+<script src="js/calcula-imc.js">
 	// //pegar conteudo do h1 (aparecendo <h1></h1>)
 	// var titulo = document.querySelector("h1");
 	// console.log(titulo);
@@ -119,7 +125,10 @@
  	// //pegar conteudo do h1 pelo nome da classe (. )
 	// var titulo = document.querySelector(".titulo");
 	// titulo.textContent = "Banana"
-
 </script>
+<script src="js/form.js"></script>
+<script src="js/remover-paciente.js"></script>
+<script src="js/filtra.js"></script>
+<script src="js/buscar-pacientes.js"></script>
 
 </html>
